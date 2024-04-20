@@ -81,7 +81,35 @@ The server will start running on `http://localhost:3000`.
 
 Use Postman or any similar API testing tool to interact with the API by sending requests to `http://localhost:3000` along with the required headers and body payloads as described above.
 
+## Screenshots
+
+
+
+![mongo1](https://github.com/simarmehta/MonterAssessment/assets/70880900/d0e67807-4943-441a-a018-3f1cde643b41)
+
+
+
+![Post API](https://github.com/simarmehta/MonterAssessment/assets/70880900/b2a45b1e-518d-4ca8-a965-25831a46ce38)
+
+
+
+![Verify](https://github.com/simarmehta/MonterAssessment/assets/70880900/95de85f9-7a3e-4b40-99ac-d640521cd591)
+
+
+
+![login fail](https://github.com/simarmehta/MonterAssessment/assets/70880900/e15352f5-d7ba-4421-9e3d-2cdb602158f0)
+
+
+
+![login passed](https://github.com/simarmehta/MonterAssessment/assets/70880900/40fcba70-7ca6-4655-be70-6ec17e6a8684)
+
+
+![userinfo](https://github.com/simarmehta/MonterAssessment/assets/70880900/78fd5b8e-7998-4cca-8fa7-e3067299d41f)
+
 
 ```
 
 This README provides a full guide from setup to execution, including installation instructions, API endpoints descriptions, and additional notes on security and testing. You can customize the URL and any other specific details as necessary.
+
+
+
