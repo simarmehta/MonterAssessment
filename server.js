@@ -62,4 +62,36 @@ app.post('/login', async (req, res) => {
     res.status(500).send(error.message);
   }
 });
+app.post('/verify-otp', async (req, res) => {
+  try {
+    const { email, otp } = req.body;
+    const user = await User.findOne({ email, otp });
+    if (!user) {
+      return res.status(400).send('Invalid OTP or email');
+    }
+    user.isVerified = true;
+    user.otp = null; // Clear OTP after successful verification
+    await user.save();
+    res.status(200).send('Email verified successfully');
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+});
 
+app.get('/user', async (req, res) => {
+  try {
+    const token = req.headers.authorization.split(' ')[1];
+    const JWT_SECRET = '383290605e178261b3c96a6209859742f6d2a78c79617b3ed7bccabecedd72b0dd6c81b69c49315f1dca94777f650a68836ade42fa955fe55a231f00f07bfeae';
+    const decoded = jwt.verify(token, JWT_SECRET);
+    const user = await User.findById(decoded.userId);
+    if (!user) return res.status(404).send('No user found');
+    res.status(200).send(user);
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
